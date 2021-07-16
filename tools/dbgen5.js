@@ -75,7 +75,7 @@ function processData(data)
     var xmlData = xmlDoc.documentElement.children;
 	let db = [...xmlData[1].children[1].children].map(r=>[...r.children].reduce((a,c)=>(a[c.id]=c.textContent,a),{}));
 	db = db.map(e=>(e.LECT_TMA = splitLectureTM(e.LECT_TM), e));
-	let KEYS = ["CORS_CD", "CORS_NM", "CLS_NO", "UNKNOWN1", "LECT_RM", "CREDIT", "UNKNOWN2", "DEPT_NM", "PROF_NM", "CLS_CNT", "LECT_TMA"];
+	let KEYS = ["CORS_CD", "CORS_NM", "CLS_NO", "REQ_DEPT_NM", "LECT_RM", "CREDIT", "UNKNOWN2", "DEPT_NM", "PROF_NM", "CLS_CNT", "LECT_TMA"];
 	db = db.map(e=>KEYS.map(k=>e[k]));
 	db = db.map(e=>e.map(v=>v?(typeof v === 'object' ? v : String(v)):''));
     var output = "var SUBJECT_DATA = \r\n" + JSON.stringify(db);
