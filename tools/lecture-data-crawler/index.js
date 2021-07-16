@@ -150,7 +150,7 @@ const TERMS = {10:'1학기', 11:'여름학기', 20:'2학기', 21:'겨울학기'}
             });
             ld = ld.map(e => JSD_FORMAT_KEYS.map(k => e[k]));
             ld = ld.map(e => e.map(v => v ? (typeof v === 'object' ? v : String(v)) : ''));
-            fs.writeFileSync('latest.jsd', `var SUBJECT_DATA = \r\n${JSON.stringify(ld)}`, 'utf8');
+            fs.writeFileSync('latest.jsd', `var SUBJECT_DATA = \r\n${JSON.stringify(ld)};`, 'utf8');
             fs.writeFileSync('update.json', JSON.stringify({
                     updateTime: new Date(),
                     year,
