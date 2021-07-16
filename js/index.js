@@ -329,7 +329,7 @@ function onDblClickCart(row, col)
 function onClickBtnShare()
 {
     var popup = window.open(
-        "https://www.facebook.com/sharer/sharer.php?u=hanpyo.com/s?d="
+        "https://www.facebook.com/sharer/sharer.php?u=refracta.github.io/fast-hanpyo/s?d="
         + serializeCart(cartedList),
     "pop", "width=600, height=400, scrollbars=no");
 }
@@ -340,7 +340,7 @@ function onClickBtnLinkShare()
     //$("#svtxt").html("http://hanpyo.com/s?d="+serializeCart(cartedList));
     //alert("페이지 맨 하단의 주소를 복사하여 공유하세요.");
 
-    var link = "http://hanpyo.com/s?d="+serializeCart(cartedList);
+    var link = "https://refracta.github.io/fast-hanpyo/s?d="+serializeCart(cartedList);
     prompt("아래 주소를 복사하세요.", link);
 }
 
