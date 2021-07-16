@@ -77,7 +77,7 @@ function processData(data)
 	db = db.map(e=>(e.LECT_TMA = splitLectureTM(e.LECT_TM), e));
 	let KEYS = ["CORS_CD", "CORS_NM", "CLS_NO", "UNKNOWN1", "LECT_RM", "CREDIT", "UNKNOWN2", "DEPT_NM", "PROF_NM", "CLS_CNT", "LECT_TMA"];
 	db = db.map(e=>KEYS.map(k=>e[k]));
-	db = db.map(e=>e.map(v=>v?v:0));
+	db = db.map(e=>e.map(v=>v?v:'null'));
     var output = "var SUBJECT_DATA = \r\n" + JSON.stringify(db);
     return output;
 }
